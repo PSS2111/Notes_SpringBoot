@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notify | Welcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="auth-card p-5 shadow-lg">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-gradient">Notify</h2>
+            <p >Capture your thoughts, beautifully.</p>
+        </div>
+
+        <form th:action="@{/notes/register}" method="post">
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input name="username" type="text" class="form-control custom-input" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input name="email" type="email" class="form-control custom-input" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input name="password" type="password" class="form-control custom-input" required>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 py-2 fw-bold mt-3">Sign Up</button>
+</form>
+
+        <div class="text-center mt-4">
+           <p>Already have an account? 
+   <a th:href="@{/notes/login}" class="text-primary fw-bold">Login here</a>
+</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+:root {
+    --bg-gradient: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                   radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+                   radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-blue: #38bdf8;
+    --accent-purple: #818cf8;
+}
+
+/* Global Text Overrides */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #0f172a;
+    background-image: var(--bg-gradient);
+    background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff !important; /* Force all base text to white */
+}
+
+/* Ensure all headings, paragraphs, and labels are white */
+h1, h2, h3, h4, h5, h6, p, label, span, div {
+    color: #ffffff;
+}
+
+/* Glass Components */
+.auth-card, .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    width: 100%;
+    transition: transform 0.3s ease;
+    color: #ffffff;
+}
+
+.auth-card { max-width: 420px; }
+
+/* Title Gradient (Keep this as the only non-white text for branding) */
+.text-gradient {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+    letter-spacing: -1px;
+}
+
+/* Inputs & Form Controls */
+.custom-input, .form-control {
+    background: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid var(--border-color) !important;
+    color: white !important;
+    border-radius: 12px;
+}
+
+.custom-input::placeholder, .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.custom-input:focus, .form-control:focus {
+    background: rgba(15, 23, 42, 0.9) !important;
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+    color: white !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(129, 140, 248, 0.3);
+}
+
+.btn-outline-light {
+    border-color: var(--border-color) !important;
+    color: white !important;
+}
+
+/* Dashboard Specifics */
+.glass-nav {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.note-input-card, .note-card {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    color: white;
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Muted text should still be white but lower opacity */
+.text-muted, .text-light-50, .x-small {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.note-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+}
+
+.note-actions {
+    margin-top: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.note-card:hover .note-actions {
+    opacity: 1;
+}
+
+.note-actions i {
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.form-control-color {
+    width: 30px;
+    height: 30px;
+    background: transparent !important;
+    border: none !important;
+}
